@@ -76,7 +76,7 @@ function installDependencies() {
 	echo -e "*** Installing Dependencies\n"
 	cd ${baseDir}/${mwDir}
 
-	composer require 'mediawiki/semantic-media-wiki=~3.2' --update-with-dependencies --no-suggest
+	composer require 'mediawiki/semantic-media-wiki=~3.1' --update-with-dependencies --no-suggest
 	composer require 'mediawiki/bootstrap=~4.0' --update-with-dependencies
 	composer require 'mediawiki/mw-extension-registry-helper=^1.0' --update-with-dependencies
 
