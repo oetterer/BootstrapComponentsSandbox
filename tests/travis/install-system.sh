@@ -144,7 +144,7 @@ function augmentConfiguration() {
 		echo '$wgLanguageCode = "'${SITELANG}'";' >>LocalSettings.php
 	fi
 	#echo 'wfLoadExtension( "SemanticMediaWiki" );' >> LocalSettings.php
-	echo 'enableSemantics( 'bsc.travis.org' );' >> LocalSettings.php
+	echo 'enableSemantics( "bsc.travis.org" );' >> LocalSettings.php
 
 	echo 'wfLoadExtension( "BootstrapComponents" );' >> LocalSettings.php
 	echo '$wgBootstrapComponentsModalReplaceImageTag = true;' >>LocalSettings.php
