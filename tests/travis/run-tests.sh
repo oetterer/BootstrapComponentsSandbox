@@ -9,12 +9,10 @@ mwDir=mw
 
 cd ${baseDir}/${mwDir}/extensions/BootstrapComponents
 
-if [[ "${TYPE}" == "coverage" ]]; then
+if [ "$TYPE" == "coverage" ]; then
 	composer unit -- --coverage-clover ${originalDirectory}/build/coverage.clover
-elif [[ "${TYPE}" == "integration" ]]; then
+elif [ "$TYPE" == "integration" ]; then
 	composer integration
-elif [[ "${TYPE}" == "unit" ]]; then
-	composer unit
-else
+else	# "$TYPE" == "unit" or undefined
 	composer unit
 fi
