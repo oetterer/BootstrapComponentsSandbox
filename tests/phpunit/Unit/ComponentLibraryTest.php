@@ -272,13 +272,11 @@ class ComponentLibraryTest extends PHPUnit_Framework_TestCase {
 
 	/**
 	 * @throws \ConfigException
-	 *
-	 * @expectedException \MWException
 	 */
 	public function testUnknownComponentName() {
 		$instance = new ComponentLibrary( true );
 
-		$this->expectException( 'MWException' );
+		$this->expectException( \MWException::class );
 		$instance->getClassFor( 'foobar' );
 	}
 

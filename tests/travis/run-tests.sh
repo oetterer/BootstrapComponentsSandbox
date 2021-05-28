@@ -6,9 +6,6 @@ cd ..
 baseDir=$(pwd)
 mwDir=mw
 
-echo "originalDirectory: $originalDirectory"
-echo "mwDir: $mwDir"
-echo "TYPE: $TYPE"
 
 cd ${baseDir}/${mwDir}/extensions/BootstrapComponents
 
@@ -19,5 +16,3 @@ elif [ "$TYPE" == "integration" ]; then
 else	# "$TYPE" == "unit" or undefined
 	composer unit
 fi
-
-echo "done testing"
