@@ -76,7 +76,7 @@ function installDependencies() {
 	echo -e "*** Installing Dependencies\n"
 	cd ${baseDir}/${mwDir}
 
-	composer require 'mediawiki/semantic-media-wiki=~3.1' --update-with-dependencies --no-suggest
+	composer require 'mediawiki/semantic-media-wiki=3.1.6' --update-with-dependencies --no-suggest
 	composer require 'mediawiki/bootstrap=~4.0' --update-with-dependencies
 	composer require 'mediawiki/mw-extension-registry-helper=^1.0' --update-with-dependencies
 
@@ -143,8 +143,9 @@ function augmentConfiguration() {
 	if [[ "${SITELANG}" != "" ]]; then
 		echo '$wgLanguageCode = "'${SITELANG}'";' >>LocalSettings.php
 	fi
-	#echo 'wfLoadExtension( "SemanticMediaWiki" );' >> LocalSettings.php
-	echo 'enableSemantics( "bsc.travis.org" );' >> LocalSettings.php
+	echo 'wfLoadExtension( "SemanticMediaWiki" );' >> LocalSettings.php
+	#echo 'enableSemantics( "bsc.travis.org" );' >> LocalSettings.php
+	echo '$smwgDefaultStore = "SMWSQLStore3";' >> LocalSettings.php
 
 	echo 'wfLoadExtension( "BootstrapComponents" );' >> LocalSettings.php
 	echo '$wgBootstrapComponentsModalReplaceImageTag = true;' >>LocalSettings.php
